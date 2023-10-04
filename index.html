@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Montserrat:wght@300&display=swap"
+    rel="stylesheet">
+  <title>Encriptadoryn</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="titulo-principal"><img src="/img/Logo.svg" alt="logo" class="logo">EncriptLeo</h1>
+  </header>
+
+  <main>
+    <section class="contenedor-texto">
+      <textarea cols="30" rows="10" class="input"></textarea>
+      <div class="alerta">
+        <h6 class=""><img src="/img/alerta_icon_fic.png" alt="Icono de alerta">Ingresar solo letras minúsculas
+          y sin acentos</h6>
+      </div>
+      <!-- Botones -->
+      <div class="botones">
+        <button class="btn-encriptar">Encriptar</button>
+        <button class="btn-desencriptar">Desencriptar</button>
+      </div>
+    </section>
+
+    <section class="contenedor-resultado">
+      <div class="resultado">
+        <h3 class="titulo-mensaje">Ningún mensaje fué encontrado</h3>
+        <p>Ingrese texto que desee encriptar o desencriptar</p>
+      </div>
+      <textarea cols="30" rows="10" class="mensaje-encriptado" style="border: none;"></textarea>
+      <div class="botones-resultado">
+        <button class="copiar">Copiar mensaje</button>
+        <button class="limpiar">Borrar mensaje</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h6>Desarrollado por Leonardo Velasquez</h6>
+  </footer>
+</body>
+
+</html>
