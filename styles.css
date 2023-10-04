@@ -11,6 +11,23 @@ body {
   width: auto;
 }
 
+/* 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inconsolata', monospace;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Hace que el cuerpo ocupe al menos el 100% de la altura de la ventana */
+
+
+header {
+  flex-grow: 1;
+  /* Hace que el contenedor principal crezca para ocupar todo el espacio disponible */
+}
+
 
 main {
   display: flex;
@@ -56,11 +73,11 @@ main {
   resize: none;
 }
 
-.text-area::placeholder {
+.input::placeholder {
   color: #0A3871;
 }
 
-.text-area:focus {
+.input:focus {
   outline: none;
 }
 
@@ -73,14 +90,13 @@ main {
   color: #0b0d0f;
 }
 
-.alerta h6 {
+.alerta p {
   color: #0b0d0f;
   font-weight: bold;
+  align-items: center;
+  display: flex;
 }
 
-.alerta img {
-  position: relative;
-}
 
 
 .botones {
@@ -89,7 +105,7 @@ main {
   flex-wrap: wrap;
   top: 9px;
   height: 80px;
-  padding-left: 10%;
+  justify-content: center;
   width: 45%;
   padding-top: 36px;
 }
@@ -151,13 +167,13 @@ main {
 }
 
 
-.munieco {
+/* .munieco {
   position: absolute;
   display: flex;
   width: 90%;
   height: 40%;
   top: 15%;
-}
+} */
 
 .mensaje-encriptado {
   position: absolute;
@@ -167,6 +183,9 @@ main {
   top: 6%;
   /* display: none; */
   background: transparent;
+  background-image: url(./img/Muñeco.png);
+  background-size: contain;
+  background-repeat: no-repeat;
   outline: none;
   padding: 21px 44px;
   font-weight: bold;
@@ -189,20 +208,6 @@ main {
   font-size: 22px;
 }
 
-/* .resultado .titulo-mensaje {
-  position: absolute;
-  width: 97%;
-  top: 65%;
-  display: inline-block;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1%;
-  gap: 16px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 22px;
-} */
 
 
 .resultado p {
@@ -218,17 +223,6 @@ main {
   text-align: center;
 }
 
-/* .resultado .mensajeEncriptado {
-  position: absolute;
-  width: 100%;
-  top: 5%;
-  display: none;
-  background: transparent;
-  outline: none;
-  padding: 1px 46px;
-  font-weight: bold;
-  font-size: 30px;
-} */
 
 .botones-resultado {
   position: relative;
@@ -282,15 +276,20 @@ main {
   background: #00c691;
 }
 
+/*  poner footer abajo */
+
 footer {
   background: black;
   height: 30px;
   border-top: 5px solid rgba(0, 0, 0, 0.24);
-  /*  poner footer abajo */
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  text-align: center;
+  color: #6de5c1;
+  font-size: 1em;
+  font-family: 'Inconsolata', monospace;
 }
 
 h6 {
@@ -300,11 +299,57 @@ h6 {
   text-align: center;
 }
 
-@media screen and (max-width:375px) {
+/* alertas de la biblioteca sweetalert */
+
+.swal-modal {
+  background-color: #a7ebb3;
+  width: 25%;
+  font-weight: bold;
+  border-radius: 23px;
+  font-family: 'Inconsolata', monospace;
+}
+
+.swal-button {
+  background-color: rgb(59, 178, 132);
+  border-color: rgb(18, 177, 95) !important;
+  border-radius: 23px;
+
+}
+
+.swal-text {
+  font-weight: bold;
+}
+
+.swal-icon--warning__body,
+.swal-icon--warning__dot {
+  position: absolute;
+  left: 50%;
+  background-color: #1357a5;
+}
+
+
+.swal-button:hover {
+  background-color: rgb(79, 8, 8) !important;
+}
+
+
+/* Media queries */
+
+/* Movil */
+
+@media screen and (max-width:390px) {
   .titulo-principal {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: start;
+  }
+
+  .input {
+    margin: 23px;
+  }
+
+  .alerta p {
+    padding: 28px;
   }
 
   .contenedor-resultado {
@@ -312,6 +357,7 @@ h6 {
     top: 114px;
     right: 5px;
     width: 80%;
+    margin-bottom: 174px;
   }
 
   .contenedor-texto {

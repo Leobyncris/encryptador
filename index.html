@@ -13,32 +13,36 @@
 
 <body>
   <header>
-    <h1 class="titulo-principal"><img src="/img/Logo.svg" alt="logo" class="logo">EncriptLeo</h1>
+    <h1 class="titulo-principal"><img src="./img/Logo.svg" alt="logo" class="logo">EncriptLeo</h1>
   </header>
 
   <main>
     <section class="contenedor-texto">
-      <textarea cols="30" rows="10" class="input"></textarea>
+      <textarea cols="30" rows="10" class="input" placeholder="Ingresa el texto aqui" id="mensaje"
+        style="overflow: hidden" autofocus pattern="[a-z ]*" oninput="this.value = this.value.replace(/[^a-z\n ]/g, '')"
+        required></textarea>
       <div class="alerta">
-        <h6 class=""><img src="/img/alerta_icon_fic.png" alt="Icono de alerta">Ingresar solo letras minúsculas
-          y sin acentos</h6>
+        <p>
+          <img src="./img/alerta_icon_fic.png" alt="Icono de alerta" id="alert">Ingresar solo letras minúsculas y sin
+          acentos
+        </p>
       </div>
       <!-- Botones -->
       <div class="botones">
-        <button class="btn-encriptar">Encriptar</button>
-        <button class="btn-desencriptar">Desencriptar</button>
+        <button class="btn-encriptar" value="Encriptar" onclick="encriptar()">Encriptar</button>
+        <button class="btn-desencriptar" value="Desencriptar" onclick="desencriptar()">Desencriptar</button>
       </div>
     </section>
 
     <section class="contenedor-resultado">
-      <div class="resultado">
-        <h3 class="titulo-mensaje">Ningún mensaje fué encontrado</h3>
-        <p>Ingrese texto que desee encriptar o desencriptar</p>
+      <div class="resultado" id="resultado">
+        <h3 class="titulo-mensaje" id="titulo-mensaje">Ningún mensaje fué encontrado</h3>
+        <p id="parrafo">Ingrese texto que desee encriptar o desencriptar</p>
       </div>
-      <textarea cols="30" rows="10" class="mensaje-encriptado" style="border: none;"></textarea>
+      <textarea cols="30" rows="10" class="mensaje-encriptado" style="border: none;" id="mensaje-encriptado"></textarea>
       <div class="botones-resultado">
-        <button class="copiar">Copiar mensaje</button>
-        <button class="limpiar">Borrar mensaje</button>
+        <button class="copiar" id="copy" onclick="copiarTexto()">Copiar mensaje</button>
+        <button class="limpiar" id="limpiar" onclick="limpiar()">Borrar mensaje</button>
       </div>
     </section>
   </main>
@@ -46,6 +50,9 @@
   <footer>
     <h6>Desarrollado por Leonardo Velasquez</h6>
   </footer>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
