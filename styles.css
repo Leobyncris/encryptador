@@ -338,6 +338,10 @@ h6 {
 /* Movil */
 
 @media screen and (max-width:390px) {
+  .swal-modal {
+    width: 50%;
+  }
+
   .titulo-principal {
     font-size: 1.5rem;
     font-weight: bold;
@@ -382,7 +386,5 @@ h6 {
     top: 15%;
   }
 
-  .swal-modal {
-    width: 70%;
-  }
+
 }
